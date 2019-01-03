@@ -1,0 +1,57 @@
+﻿@model HelpManual.Helpers.PaginatedList<GetPagesTotalViewModel>
+
+@{
+    ViewData["Title"] = "View Page Usage";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<form asp-action="GetUsagePage" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by page: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+            <input type="submit" value="Search" class="btn btn-default" /> |
+            <a asp-action="GetUsagePage">Back to Full List</a>
+        </p>
+    </div>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Page No
+            </th>
+            <th>
+                Total
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PageNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@for (int i = 1; i < Model.TotalPages + 1; i++)
+{
+    var currentPage = Model.PageIndex == i ? "disabled btn-primary" : "btn-default";
+    <a asp-action="GetUsagePage"
+       asp-route-sortOrder="@ViewData["CurrentSort"]"
+       asp-route-page="@i"
+       asp-route-currentFilter="@ViewData["CurrentFilter"]"
+       class="btn @currentPage">
+        @i
+    </a>
+}

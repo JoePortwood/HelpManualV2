@@ -1,0 +1,58 @@
+﻿@model HelpManual.Entities.ObjectType
+@using HelpManual.Helpers
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        <h4>ObjectType</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Data)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Data)
+            </dd>
+            <dt>
+                Preview
+            </dt>
+            <dd>
+                @Html.Tag(Model.ControlType.Control, Model.Name, Model.Name, Model.Options, Model.Image)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Options)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Options)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.StartEnd)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.StartEnd)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ControlType)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ControlType.ControlTypeId)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.ObjectTypeId">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+}

@@ -1,0 +1,17 @@
+C:\Users\JoePo\source\repos\HelpManual\HelpManualTest\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\JoePo\source\repos\HelpManual\HelpManualTest\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\JoePo\source\repos\HelpManual\HelpManualTest\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+C:\Users\JoePo\source\repos\HelpManual\HelpManualTest\bin\Debug\netcoreapp2.1\HelpManualTest.deps.json
+C:\Users\JoePo\source\repos\HelpManual\HelpManualTest\bin\Debug\netcoreapp2.1\HelpManualTest.runtimeconfig.json
+C:\Users\JoePo\source\repos\HelpManual\HelpManualTest\bin\Debug\netcoreapp2.1\HelpManualTest.runtimeconfig.dev.json
+C:\Users\JoePo\source\repos\HelpManual\HelpManualTest\bin\Debug\netcoreapp2.1\HelpManualTest.dll
+C:\Users\JoePo\source\repos\HelpManual\HelpManualTest\bin\Debug\netcoreapp2.1\HelpManualTest.pdb
+C:\Users\JoePo\source\repos\HelpManual\HelpManualTest\bin\Debug\netcoreapp2.1\HelpManual.dll
+C:\Users\JoePo\source\repos\HelpManual\HelpManualTest\bin\Debug\netcoreapp2.1\HelpManual.pdb
+C:\Users\JoePo\source\repos\HelpManual\HelpManualTest\obj\Debug\netcoreapp2.1\HelpManualTest.csprojAssemblyReference.cache
+C:\Users\JoePo\source\repos\HelpManual\HelpManualTest\obj\Debug\netcoreapp2.1\HelpManualTest.csproj.CoreCompileInputs.cache
+C:\Users\JoePo\source\repos\HelpManual\HelpManualTest\obj\Debug\netcoreapp2.1\HelpManualTest.AssemblyInfoInputs.cache
+C:\Users\JoePo\source\repos\HelpManual\HelpManualTest\obj\Debug\netcoreapp2.1\HelpManualTest.AssemblyInfo.cs
+C:\Users\JoePo\source\repos\HelpManual\HelpManualTest\obj\Debug\netcoreapp2.1\HelpManualTest.csproj.CopyComplete
+C:\Users\JoePo\source\repos\HelpManual\HelpManualTest\obj\Debug\netcoreapp2.1\HelpManualTest.dll
+C:\Users\JoePo\source\repos\HelpManual\HelpManualTest\obj\Debug\netcoreapp2.1\HelpManualTest.pdb

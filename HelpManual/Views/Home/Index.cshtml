@@ -1,0 +1,63 @@
+﻿@using HelpManual.Helpers
+@model PaginatedList<HelpManual.Entities.FormObject>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div style="padding-bottom:5em;"></div>
+
+<!-- CREATE CONTROLS BEGIN -->
+@using (Html.BeginForm())
+{
+    @foreach (var item in Model)
+    {
+        @Html.Tag(item.ObjectType.ControlType.Control, item.ObjectType.Name, item.ObjectType.Data, item.ObjectType.Options, item.ObjectType.Image)
+        @*@Html.Raw(item.ObjectType.Data)*@
+        <hr />
+    }
+}
+<!-- CREATE CONTROLS END -->
+
+<!-- PAGING BEGIN -->
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<a asp-action="Index"
+    asp-route-page="@(Model.PageIndex - 1)"
+    class="btn btn-default @prevDisabled">
+    Previous
+</a>
+<a asp-action="Index"
+    asp-route-page="@(Model.PageIndex + 1)"
+    class="btn btn-default @nextDisabled">
+    Next
+</a>
+
+<div style="padding-bottom:1em;"></div>
+
+@for (int i = 1; i < Model.TotalPages + 1; i++)
+{
+    string currentPage;
+    if (Model.PageIndex == i)
+    {
+        currentPage = "disabled btn-primary";
+    }
+    //Only allow to go through one page at a time
+    else if (Model.PageIndex + 1 >= i || ViewBag.MaxPage + 1 >= i)
+    {
+        currentPage = "btn-default";
+    }
+    else
+    {
+        currentPage = "disabled btn-default";
+    }
+    <a asp-action="Index"
+       asp-route-page="@i"
+       class="btn @currentPage">
+       @i
+    </a>
+}
+<!-- PAGING END -->

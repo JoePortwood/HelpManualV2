@@ -1,0 +1,71 @@
+﻿@model HelpManual.Models.ObjectTypeViewModel
+@using HelpManual.Helpers
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>ObjectType</h4>
+<hr />
+<form asp-action="Edit" enctype="multipart/form-data">
+    @using (Html.BeginForm())
+    {
+        <div class="row">
+            <div class="col-md-12">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="ObjectTypeId" />
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group" id="dataSect">
+                    <label asp-for="Data" class="control-label"></label>
+                    <textarea asp-for="Data"></textarea>
+                    <span asp-validation-for="Data" class="text-danger"></span>
+                </div>
+                @*<div class="form-group hidden" id="dataSect">
+                    <label asp-for="Data" class="control-label"></label>
+                    <input asp-for="Data" class="form-control" />
+                    <span asp-validation-for="Data" class="text-danger"></span>
+                </div>*@
+                <div class="form-group hidden" id="imageSect">
+                    <label asp-for="Image" class="control-label"></label>
+                    <input asp-for="Image" type="file" class="form-control" accept="image/*" />
+                    <span asp-validation-for="Image" class="text-danger"></span>
+                    <div style="margin-bottom:1em"></div>
+                    <label class="control-label">Current Image</label>
+                    @Html.Tag(Model.ControlType.Control, Model.Name, Model.Name, Model.Options, Model.ImageBytes)
+                </div>
+                <div class="form-group hidden" id="optionsSect">
+                    <label asp-for="Options" class="control-label"></label>
+                    <input asp-for="Options" class="form-control" />
+                    <span asp-validation-for="Options" class="text-danger"></span>
+                </div>
+                <div class="form-group hidden" id="startEndSect">
+                    <label asp-for="StartEnd" class="control-label"></label>
+                    <input asp-for="StartEnd" class="form-control" />
+                    <span asp-validation-for="StartEnd" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ControlTypeId" class="control-label"></label>
+                    <select asp-for="ControlTypeId" class="form-control" asp-items="ViewBag.ControlTypeId"></select>
+                    <span asp-validation-for="ControlTypeId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
+    }
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

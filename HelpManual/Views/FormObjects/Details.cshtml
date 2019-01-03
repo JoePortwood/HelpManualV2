@@ -1,0 +1,42 @@
+﻿@model HelpManual.Entities.FormObject
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>FormObject</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PageNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PageNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Order)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Order)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.QuestionNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.QuestionNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ObjectType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ObjectType.Name)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.FormObjectId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,47 @@
+﻿@model HelpManual.Entities.FormObject
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>FormObject</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="FormObjectId" />
+            <div class="form-group">
+                <label asp-for="Order" class="control-label"></label>
+                <select asp-for="Order" class="form-control" asp-items="ViewBag.Orders"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PageNo" class="control-label"></label>
+                <select asp-for="PageNo" class="form-control" asp-items="ViewBag.PageNo" onchange="this.form.submit();"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuestionNo" class="control-label"></label>
+                <input asp-for="QuestionNo" class="form-control" />
+                <span asp-validation-for="QuestionNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ObjectTypeId" class="control-label"></label>
+                <select asp-for="ObjectTypeId" class="form-control" asp-items="ViewBag.ObjectTypeId"></select>
+                <span asp-validation-for="ObjectTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" name="save" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
